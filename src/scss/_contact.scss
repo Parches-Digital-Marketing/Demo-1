@@ -1,0 +1,115 @@
+.contact-container {
+    @include section;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    background-color: #242424;
+    box-shadow: inset 0px 20px 10px -15px rgb(50, 50, 50);
+    position: relative;
+    z-index: 3;
+    .section {
+        width: 1120px;
+        padding-top: 20px;
+        .scroll {
+            z-index: -1;
+            left: 0;
+            top: -600px
+        }
+        .contact__title {
+            @include sectionTitle;
+            margin: 0;
+        }
+        .contact-info {
+            display: flex;
+            gap: 50px;
+            .subtitle {
+                color: $primaryColor;
+            }
+            .social-media {
+                max-width: 1150px;
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0px;
+                    list-style: none;
+                    padding: 0;
+                    .list__link {
+                        text-decoration: none;
+                        .list__item {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            color: black;
+                            .list__image {
+                                width: 40px;
+                                height: 100%;
+                                transition: transform .25s ease;
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            .list__name {
+                                color: white;
+                                &:hover {
+                                    color: rgb(255, 107, 107);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .opening-hours {
+                .hours {
+    
+                }
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                .contact__email {
+    
+                }
+                .contact__phone {
+    
+                }
+            }
+            .map {
+                border:0;
+                box-shadow: 0 0 10px .1px black;
+                border-radius: 10px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1700px) {
+    .contact-container {
+        padding-left: 0;
+        .section {
+            width: 100%;
+            padding: 10px;
+            padding-bottom: 80px;
+            box-sizing: border-box;
+            .social-media {
+                width: 100%;
+                .list {
+                    flex-direction: column;
+                    .list__link {
+                        .list__item {
+                            display: grid;
+                            grid-template-columns: 120px 150px;
+                            gap: 20px;
+                        }
+                    }
+                }
+            }
+            .map {
+                width: 100%;
+                height: 200px;
+                margin: 0;
+            }
+        }
+    }
+}
