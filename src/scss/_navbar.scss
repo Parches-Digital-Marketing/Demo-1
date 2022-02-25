@@ -58,9 +58,6 @@
                         background-color: #00000042;
                         border-bottom: 5px solid $primaryColor;
                     }
-                    &:nth-child(5) {
-                        // padding-right: 0;
-                    }
                     .list__item {
                         cursor: pointer;
                     }
@@ -78,6 +75,8 @@
         gap: 0;
         justify-content: space-between;
         .content {
+            padding: 0 20px;
+            align-items: center;
             .logo-container {
                 .navbar__logo {
                     width: 60px;
@@ -93,19 +92,17 @@
                         position: absolute;
                         top: 80px;
                         left: 0;
-                        padding-top: 20px;
-                        gap: 20px;
+                        gap: 0px;
                         background-color: $primaryColor;
-                        height: 200px;
+                        height: 300px;
                         width: 100%;
-                        .list__item {
+                        .list__link {
+                            border: none;
+                            &.active {
+                                color: white;
+                            }
                             &:hover {
                                 color: black;
-                            }
-                            .list__link {
-                                &.active {
-                                    color: black;
-                                }
                             }
                         }
                     }

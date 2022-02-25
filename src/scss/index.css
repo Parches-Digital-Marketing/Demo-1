@@ -73,6 +73,8 @@ html body .app-container .scroll-top {
   cursor: pointer;
   border: none;
   border-radius: 300px;
+  -webkit-box-shadow: 0 0 5px 1px black;
+          box-shadow: 0 0 5px 1px black;
 }
 
 html body .app-container .scroll-top .fa-arrow-up {
@@ -199,6 +201,12 @@ html body .app-container .scroll {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .navbar-container .content {
+    padding: 0 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .navbar-container .content .logo-container .navbar__logo {
     width: 60px;
   }
@@ -218,16 +226,18 @@ html body .app-container .scroll {
     position: absolute;
     top: 80px;
     left: 0;
-    padding-top: 20px;
-    gap: 20px;
+    gap: 0px;
     background-color: #00c3dd;
-    height: 200px;
+    height: 300px;
     width: 100%;
   }
-  .navbar-container .content .navbar .list.active .list__item:hover {
-    color: black;
+  .navbar-container .content .navbar .list.active .list__link {
+    border: none;
   }
-  .navbar-container .content .navbar .list.active .list__item .list__link.active {
+  .navbar-container .content .navbar .list.active .list__link.active {
+    color: white;
+  }
+  .navbar-container .content .navbar .list.active .list__link:hover {
     color: black;
   }
   .navbar-container .content .navbar .navbar__button {
@@ -322,8 +332,15 @@ html body .app-container .scroll {
   .home {
     height: 100vh;
   }
+  .home .welcome {
+    width: 100%;
+  }
   .home .welcome .home__text {
     text-align: center;
+  }
+  .home .welcome .home__link .home__button {
+    min-width: 250px;
+    width: 100%;
   }
 }
 
@@ -475,6 +492,10 @@ html body .app-container .scroll {
   color: #00c3dd;
 }
 
+.gallery-container .section .gallery .gallery__title .gallery__title-color {
+  color: white;
+}
+
 .gallery-container .section .gallery .list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -493,7 +514,7 @@ html body .app-container .scroll {
 }
 
 .gallery-container .section .gallery .list .list__item:hover {
-  opacity: .6;
+  opacity: .9;
 }
 
 .gallery-container .section .gallery .list .list__item .list__image {
@@ -501,7 +522,7 @@ html body .app-container .scroll {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1269px) {
@@ -514,7 +535,7 @@ html body .app-container .scroll {
   }
   .gallery-container .section {
     width: 100%;
-    padding: 100px 10px;
+    padding: 100px 20px;
     padding-top: 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -611,7 +632,7 @@ html body .app-container .scroll {
 
 @media screen and (min-width: 320px) and (max-width: 1700px) {
   .about-us-container {
-    padding: 10px;
+    padding: 20px;
     padding-bottom: 80px;
     height: 100%;
     -webkit-box-sizing: border-box;
@@ -781,11 +802,11 @@ html body .app-container .scroll {
   gap: 40px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1000px) {
+@media screen and (min-width: 320px) and (max-width: 1700px) {
   .plans-container .section {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
     padding-top: 10px;
     padding-bottom: 40px;
     -webkit-box-sizing: border-box;
@@ -798,41 +819,23 @@ html body .app-container .scroll {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .plans-container .section .plans .list .list__item {
-    padding: 10px;
-  }
-}
-
-@media screen and (min-width: 1001px) and (max-width: 1700px) {
-  .plans-container .section {
     width: 100%;
+    max-width: 355px;
+  }
+  .plans-container .section .plans .list .list__item .list__title {
     height: 100%;
-    padding: 0 10px;
-    padding-top: 10px;
-    padding-bottom: 40px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .plans-container .section .plans {
-    width: 100%;
-  }
-  .plans-container .section .plans .list {
-    -ms-grid-columns: minmax(300px, 543px) minmax(300px, 543px);
-        grid-template-columns: minmax(300px, 543px) minmax(300px, 543px);
-  }
-  .plans-container .section .plans .list .list__item {
-    min-width: 300px;
-    max-width: 543px;
-    max-height: 300px;
     padding: 10px;
   }
-  .plans-container .section .plans .list .list__item:nth-child(1) {
-    max-width: 100%;
+  .plans-container .section .plans .list .list__item .list__cost {
+    font-size: 40px;
+    padding: 0;
   }
 }
 
@@ -908,7 +911,7 @@ html body .app-container .scroll {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0px;
+  gap: 10px;
   list-style: none;
   padding: 0;
 }
@@ -947,7 +950,18 @@ html body .app-container .scroll {
 }
 
 .contact-container .section .contact-info .social-media .list .list__link .list__item .list__name:hover {
-  color: #ff6b6b;
+  color: #00e1ff;
+}
+
+.contact-container .section .contact-info .opening-hours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
 }
 
 .contact-container .section .contact-info .contact {
@@ -958,6 +972,7 @@ html body .app-container .scroll {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 10px;
 }
 
 .contact-container .section .contact-info .map {
@@ -971,34 +986,104 @@ html body .app-container .scroll {
 @media screen and (min-width: 320px) and (max-width: 1700px) {
   .contact-container {
     padding-left: 0;
+    height: 100%;
   }
   .contact-container .section {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     padding-bottom: 80px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .contact-container .section .social-media {
+  .contact-container .section .contact-info-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact-container .section .contact-info-container .contact-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 70% 30%;
+        grid-template-columns: 70% 30%;
+    grid-auto-rows: 100%;
+    gap: 0;
+  }
+  .contact-container .section .contact-info-container .contact-info .social-media {
     width: 100%;
   }
-  .contact-container .section .social-media .list {
+  .contact-container .section .contact-info-container .contact-info .social-media .list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
-  .contact-container .section .social-media .list .list__link .list__item {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 120px 150px;
-        grid-template-columns: 120px 150px;
-    gap: 20px;
+  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link {
+    width: 100%;
   }
-  .contact-container .section .map {
+  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link .list__item {
+    width: 100%;
+    gap: 10px;
+  }
+  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link .list__item .list__image {
+    width: 30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 700px) {
+  .contact-container .section .contact-info .map-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  .contact-container .section .contact-info .map-container .map {
     width: 100%;
     height: 200px;
     margin: 0;
+    margin-top: 40px;
+    max-width: 363px;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1700px) {
+  .contact-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-container .section .contact-info-container .contact-info {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    gap: 0px;
+    max-width: 700px;
+    min-width: 600px;
+  }
+  .contact-container .section .contact-info-container .contact-info .social-media {
+    width: auto;
+  }
+  .contact-container .section .contact-info-container .contact-info .map {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    margin-top: 20px;
+    max-width: 363px;
   }
 }
 

@@ -52,8 +52,15 @@
     .home {
         height: 100vh;
         .welcome {
+            width: 100%;
             .home__text {
                 text-align: center;
+            }
+            .home__link {
+                .home__button {
+                    min-width: 250px;
+                    width: 100%;
+                }
             }
         }
     }
