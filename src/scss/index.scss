@@ -95,10 +95,14 @@ html {
     }
 }
 
-@import "./navbar";
-@import "./home";
-@import "./gallery";
-@import "./aboutUs";
-@import "./plans";
-@import "./contact";
-@import "./footer";
+//sections
+@import "./sections/navbar";
+@import "./sections/home";
+@import "./sections/gallery";
+@import "./sections/aboutUs";
+@import "./sections/plans";
+@import "./sections/contact";
+@import "./sections/footer";
+
+//components
+@import "./components/carousel";

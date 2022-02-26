@@ -353,106 +353,6 @@ html body .app-container .scroll {
           box-shadow: inset 0px -20px 10px -15px #323232, inset 0px 20px 10px -15px #323232;
 }
 
-.gallery-container .carousel-root {
-  width: 100%;
-  height: 120%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  top: 0;
-  z-index: 6;
-}
-
-.gallery-container .carousel-root .carousel-slider {
-  width: 1000px !important;
-  height: 500px !important;
-  overflow-x: initial;
-}
-
-.gallery-container .carousel-root .carousel-slider #close-button {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 0, 0, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: none;
-  border-radius: 300px;
-  color: white;
-  cursor: pointer;
-}
-
-.gallery-container .carousel-root .carousel-slider #close-button:hover {
-  color: #00c3dd;
-}
-
-.gallery-container .carousel-root .carousel-slider #close-button::before {
-  content: "X";
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.gallery-container .carousel-root .carousel-slider .control-dots .dot {
-  width: 15px;
-  height: 15px;
-}
-
-.gallery-container .carousel-root .carousel-slider .control-dots .dot:hover {
-  background-color: #00c3dd;
-}
-
-.gallery-container .carousel-root .carousel-slider .slider-wrapper .slider li div img {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  height: 500px !important;
-}
-
-.gallery-container .carousel-root .carousel-slider .control-arrow {
-  opacity: 1;
-}
-
-.gallery-container .carousel-root .carousel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.gallery-container .carousel-root .carousel .thumbs-wrapper .thumbs li {
-  border: none;
-  border-radius: 10px;
-  width: 200px !important;
-  height: 200px !important;
-  cursor: pointer;
-}
-
-.gallery-container .carousel-root .carousel .thumbs-wrapper .thumbs li:hover {
-  opacity: .5;
-}
-
-.gallery-container .carousel-root .carousel .thumbs-wrapper .thumbs li img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
 .gallery-container .section {
   width: 100%;
   padding-left: 400px;
@@ -742,6 +642,7 @@ html body .app-container .scroll {
           box-sizing: border-box;
   width: 500px;
   padding-bottom: 50px;
+  border-radius: 30px;
 }
 
 .plans-container .section .plans .list .list__item:nth-child(2) {
@@ -776,6 +677,8 @@ html body .app-container .scroll {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #323232;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .plans-container .section .plans .list .list__item .list__cost {
@@ -1109,6 +1012,253 @@ html body .app-container .scroll {
 @media screen and (min-width: 320px) and (max-width: 1200px) {
   .footer-container .copyright {
     text-align: center;
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.carousel-container .carousel-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 120px;
+}
+
+.carousel-container .carousel-section .carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+}
+
+.carousel-container .carousel-section .carousel .carousel__item {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.carousel-container .carousel-section .carousel .carousel__item.active {
+  display: inline-block;
+}
+
+.carousel-container .carousel-section .carousel .carousel__item .carousel__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel-container .carousel-section .carousel .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-container .carousel-section .carousel .buttons .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: color .25s ease;
+  transition: color .25s ease;
+}
+
+.carousel-container .carousel-section .carousel .buttons .button:hover {
+  color: #00c3dd;
+}
+
+.carousel-container .carousel-section .carousel .buttons .close-button {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 300px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.carousel-container .carousel-section .carousel .buttons .close-button:hover {
+  color: #00c3dd;
+}
+
+.carousel-container .carousel-section .gallery-row {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-container .carousel-section .gallery-row .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.carousel-container .carousel-section .gallery-row .list .list__item {
+  min-width: 220px;
+  height: 220px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.carousel-container .carousel-section .gallery-row .list .list__item.active {
+  border: 3px solid #00c3dd;
+}
+
+.carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-transition: opacity .25s ease;
+  transition: opacity .25s ease;
+}
+
+.carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail:hover {
+  opacity: .8;
+}
+
+.carousel-container .carousel-section .gallery-row .gallery-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-container .carousel-section .gallery-row .gallery-buttons .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #00c3dd;
+  color: rgba(255, 255, 255, 0.876);
+  font-size: 40px;
+  border: 3px solid #00c3dd;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.carousel-container .carousel-section .gallery-row .gallery-buttons .button:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 320px) and (max-width: 1700px) {
+  .carousel-container .carousel-section {
+    gap: 40px;
+  }
+  .carousel-container .carousel-section .carousel {
+    height: 100%;
+  }
+  .carousel-container .carousel-section .carousel .carousel__item {
+    width: 100%;
+    max-width: 1000px;
+  }
+  .carousel-container .carousel-section .carousel .buttons {
+    padding-top: 30px;
+  }
+  .carousel-container .carousel-section .carousel .buttons .button {
+    font-size: 30px;
+  }
+  .carousel-container .carousel-section .carousel .buttons .close-button {
+    font-size: 20px;
+  }
+  .carousel-container .carousel-section .gallery-row .gallery-buttons .button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .carousel-container .carousel-section .gallery-row .list .list__item {
+    min-width: 100px;
+    height: 100px;
+  }
+  .carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .carousel-container .carousel-section .gallery-row .list .list__item {
+    min-width: 150px;
+    height: 150px;
+  }
+  .carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=index.css.map */

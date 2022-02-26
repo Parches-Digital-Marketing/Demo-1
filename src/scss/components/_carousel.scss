@@ -1,0 +1,210 @@
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    .carousel-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 120px;
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            .carousel__item {
+                display: none;
+                width: 100%;
+                height: 100%;
+                padding-top: 50px;
+                &.active {
+                    display: inline-block;
+                }
+                .carousel__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding-top: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: none;
+                    color: white;
+                    font-size: 30px;
+                    cursor: pointer;
+                    width: 50px;
+                    height: 50px;
+                    transition: color .25s ease;
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+                .close-button {
+                    position: absolute;
+                    top: 50px;
+                    left: 0px;
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: none;
+                    border-radius: 300px;
+                    color: white;
+                    font-size: 30px;
+                    cursor: pointer;
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+        .gallery-row {
+            width: 100%;
+            position: relative;
+            .list {
+                display: flex;
+                gap: 20px;
+                padding-left: 20px;
+                margin: 0;
+                list-style: none;
+                width: 100%;
+                transition: all 1s ease;
+                position: relative;
+                z-index: 5;
+                .list__item {
+                    min-width: 220px;
+                    height: 220px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    border: 3px solid rgba(0, 0, 0, 0);
+                    box-sizing: border-box;
+                    &.active {
+                        border: 3px solid $primaryColor;
+                    }
+                    .list__thumbnail {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                        transition: opacity .25s ease;
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+            .gallery-buttons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $primaryColor;
+                    color: rgba(255, 255, 255, 0.876);
+                    font-size: 40px;
+                    border: 3px solid $primaryColor;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    transition: all .25s ease;
+                    position: relative;
+                    z-index: 5;
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1700px) {
+    .carousel-container {
+        .carousel-section {
+            gap: 40px;
+            .carousel {
+                height: 100%;
+                .carousel__item {
+                    width: 100%;
+                    max-width: 1000px;
+                }
+                .buttons {
+                    padding-top: 30px;
+                    .button {
+                        font-size: 30px;
+                    }
+                    .close-button {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .gallery-row {
+                .gallery-buttons {
+                    .button {
+                        width: 30px;
+                        height: 30px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .carousel-container {
+        .carousel-section {
+            .gallery-row {
+                .list {
+                    .list__item {
+                        min-width: 100px;
+                        height: 100px;
+                        .list__thumbnail {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .carousel-container {
+        .carousel-section {
+            .gallery-row {
+                .list {
+                    .list__item {
+                        min-width: 150px;
+                        height: 150px;
+                        .list__thumbnail {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
