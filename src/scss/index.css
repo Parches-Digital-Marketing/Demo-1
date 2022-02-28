@@ -1061,6 +1061,7 @@ html body .app-container .scroll {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 10px;
 }
 
 .carousel-container .carousel-section .carousel .buttons {
@@ -1137,15 +1138,18 @@ html body .app-container .scroll {
   padding-left: 20px;
   margin: 0;
   list-style: none;
-  width: 100%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
   position: relative;
   z-index: 5;
+  padding-right: 20px;
 }
 
 .carousel-container .carousel-section .gallery-row .list .list__item {
-  min-width: 220px;
+  width: 220px;
   height: 220px;
   cursor: pointer;
   border-radius: 10px;
@@ -1216,11 +1220,10 @@ html body .app-container .scroll {
 }
 
 @media screen and (min-width: 320px) and (max-width: 1700px) {
-  .carousel-container .carousel-section {
-    gap: 40px;
-  }
   .carousel-container .carousel-section .carousel {
-    height: 100%;
+    min-height: 300px;
+    max-height: 500px;
+    height: 30vw;
   }
   .carousel-container .carousel-section .carousel .carousel__item {
     width: 100%;
@@ -1235,30 +1238,21 @@ html body .app-container .scroll {
   .carousel-container .carousel-section .carousel .buttons .close-button {
     font-size: 20px;
   }
+  .carousel-container .carousel-section .gallery-row .list .list__item {
+    min-width: 100px;
+    max-width: 220px;
+    min-height: 100px;
+    max-height: 220px;
+    width: 15vw;
+    height: 15vw;
+  }
+  .carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
+    width: 100%;
+  }
   .carousel-container .carousel-section .gallery-row .gallery-buttons .button {
     width: 30px;
     height: 30px;
     font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 600px) {
-  .carousel-container .carousel-section .gallery-row .list .list__item {
-    min-width: 100px;
-    height: 100px;
-  }
-  .carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-  .carousel-container .carousel-section .gallery-row .list .list__item {
-    min-width: 150px;
-    height: 150px;
-  }
-  .carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
-    width: 100%;
   }
 }
 /*# sourceMappingURL=index.css.map */

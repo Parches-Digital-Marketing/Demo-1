@@ -3,7 +3,7 @@ import { useCarousel } from "../hooks/useCarousel"
 
 export default function Carousel({images, selectedImage}) {
     const [activeImage, setActiveImage] = useState(selectedImage)
-    const {selectCarouselImage, moveCarouselImage, getAndMoveCorrectPosition} = useCarousel(setActiveImage, images, selectedImage)
+    const {selectCarouselImage, moveCarouselImage, moveToPositionAndDirection} = useCarousel(setActiveImage, images, selectedImage)
 
     return (
         <div className="carousel-container">
@@ -37,8 +37,8 @@ export default function Carousel({images, selectedImage}) {
                         }
                     </ul>
                     <div className="gallery-buttons">
-                        <button className="button" onClick={() => getAndMoveCorrectPosition()}><i className="fas fa-angle-left"></i></button>
-                        <button className="button" onClick={() => getAndMoveCorrectPosition("right")}><i className="fas fa-angle-right"></i></button>
+                        <button className="button" onClick={() => moveToPositionAndDirection()}><i className="fas fa-angle-left"></i></button>
+                        <button className="button" onClick={() => moveToPositionAndDirection("right")}><i className="fas fa-angle-right"></i></button>
                     </div>
                 </div>
             </section>
