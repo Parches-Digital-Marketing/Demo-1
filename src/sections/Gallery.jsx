@@ -12,7 +12,7 @@ import image10 from '../images/image10.jpg';
 import Carousel from "../components/Carousel";
 
 function Gallery() {
-    const images = [{url: image1}, {url: image2}, {url: image3}, {url: image4}, {url: image5}, {url: image6}, {url: image7}, {url: image8}, {url: image9}, {url: image10}]
+    const images = [{url: image1}, {url: image2}, {url: image3}, {url: image4}, {url: image5}, {url: image6}, {url: image7}, {url: image8}, {url: image9}]
     const {carousel, imageSlider} = useGallery()
 
     return (
