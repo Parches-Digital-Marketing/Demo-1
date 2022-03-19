@@ -1,0 +1,91 @@
+.calendar-container {
+    width: 100%;
+    background: rgb(0, 0, 0) url(../images/calendaryImage.png) no-repeat fixed center center / cover;
+    .section {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        position: relative;
+        .scroll {
+            left: 0;
+            top: 00px;
+            z-index: -1;
+        }
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $blackColor;
+            width: 100%;
+            max-width: $maxSectionWidth;
+            .calendar__title {
+                @include sectionTitle;
+                color: $primaryColor;
+            }
+            .days {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-width: $maxSectionWidth;
+                .days__item {
+                    min-width: 100px;
+                    max-width: 183.33px;
+                    width: 100%;
+                    .days__title {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 700;
+                        font-size: 16px;
+                        background-color: $primaryColor;
+                        margin: 0;
+                        height: 50px;
+                    }
+                    .activities {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 50px;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        background-color: $blackColor;
+                        .activity__item {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100px;
+                            .activity__name {
+                                color: $primaryColor;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1099px) {
+    .calendar-container {
+        .section {
+            .calendar {
+                padding: 20px;
+                .calendar__title {
+                    text-align: center;
+                }
+                .days {
+                    row-gap: 20px;
+                    .days__item {
+                        border: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}

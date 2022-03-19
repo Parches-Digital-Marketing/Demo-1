@@ -17,7 +17,7 @@ export default function Navbar() {
     window.addEventListener('scroll', fixNavbar)
     
     return (
-        <section className={navbar ? "navbar-container active" : "navbar-container"}>
+        <div className={navbar ? "navbar-container active" : "navbar-container"}>
             <div className="content">
                 <div className="logo-container">
                     <img className="navbar__logo" src={larosalogo} alt="logo" />
@@ -30,19 +30,22 @@ export default function Navbar() {
                         <Link activeClass="active" className="list__link" to="about-us" spy={true} smooth={true} duration={500} offset={-200}>
                             <li className="list__item">Nosotros</li>
                         </Link>
-                        <Link activeClass="active" className="list__link" to="gallery" spy={true} smooth={true} duration={500} offset={-80}>
-                            <li className="list__item">Galería</li>
+                        <Link activeClass="active" className="list__link" to="services" spy={true} smooth={true} duration={500} offset={-200}>
+                            <li className="list__item">Servicios</li>
+                        </Link>
+                        <Link activeClass="active" className="list__link" to="calendar" spy={true} smooth={true} duration={500} offset={-200}>
+                            <li className="list__item">Calendario</li>
                         </Link>
                         <Link activeClass="active" className="list__link" to="plans" spy={true} smooth={true} duration={500} offset={-30}>
                             <li className="list__item">Planes</li>
                         </Link>
-                        <Link activeClass="active" className="list__link" to="contact" spy={true} smooth={true} duration={500} offset={50}>
+                        <Link activeClass="active" className="list__link" to="contact" spy={true} smooth={true} duration={500} offset={100}>
                             <li className="list__item">Contacto</li>
                         </Link>
                     </ul>
                     <button className="navbar__button" onClick={() => {burgerMenu ? setBurgerMenu(false) : setBurgerMenu(true)}}><i className="fas fa-bars"></i></button>
                 </nav>
             </div>
-        </section>
+        </div>
     )
 }

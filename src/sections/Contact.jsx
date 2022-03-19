@@ -5,7 +5,7 @@ import whatsAppLogo from '../images/whatsAppLogo.png'
 export default function Contact() {
     return (
         <div className="contact-container">
-            <div className="section">
+            <section className="section">
                 <div className="scroll" name="contact"></div>
                 <h2 className="contact__title">Comunícate con <span className="about-us__title-color">Nosotros</span></h2>
                 <div className="contact-info-container">
@@ -47,7 +47,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }

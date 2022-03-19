@@ -35,11 +35,12 @@ export const useCarousel = (setActiveImage, images, selectedImage) => {
 
     const moveGalleryRow = () => {
         const galleryList = document.getElementById('galleryList')
+        const totalGalleryWidthRequired = galleryList.clientWidth
+        const galleryRow = document.getElementById('galleryRow')
+        const widthUsedToDisplayImages = galleryRow.clientWidth
         const imageWidthReference = galleryList.childNodes[0].offsetWidth + imageGap
         const scrollBarWidth = window.innerWidth - document.body.clientWidth
-        const totalGalleryWidthRequired = galleryList.clientWidth
-        const widthUsedToDisplayImages = screen.width
-        const rightEndPosition = totalGalleryWidthRequired - (widthUsedToDisplayImages - scrollBarWidth)
+        const rightEndPosition = totalGalleryWidthRequired - widthUsedToDisplayImages
         const additionalSpace = 100
         if(prevPosition.current < (-rightEndPosition + (imageWidthReference)) && prevPosition.current > -rightEndPosition && position <= -rightEndPosition) { //si estas muy cerca de la derecha y te moves a la derecha, se coloca en la ultima imagen derecha
             galleryList.style.transform = `translate(-${rightEndPosition}px)`

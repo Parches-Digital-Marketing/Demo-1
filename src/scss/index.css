@@ -1,6 +1,25 @@
 @font-face {
-  src: url("./fonts/Roboto-Bold.ttf") format("truetype"), url("./fonts/Roboto-Medium.ttf") format("truetype"), url("./fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
   font-family: "Roboto";
+  font-weight: 300;
+}
+
+@font-face {
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 html {
@@ -19,7 +38,7 @@ html body {
   overflow-x: hidden;
   height: 100vh;
   width: 100%;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 14px;
   font-weight: 400;
   color: white;
@@ -43,23 +62,6 @@ html body .app-container {
   height: -moz-min-content;
   height: min-content;
   position: relative;
-}
-
-html body .app-container .dark {
-  display: none;
-  background: #000;
-  opacity: 0.8;
-  z-index: 5;
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-html body .app-container .dark.active {
-  display: inline-block;
 }
 
 html body .app-container .scroll-top {
@@ -87,6 +89,10 @@ html body .app-container .scroll {
   height: 80%;
   position: absolute;
   top: 0;
+}
+
+html body .app-container .body .complementary-sections {
+  background-color: white;
 }
 
 .navbar-container {
@@ -228,7 +234,7 @@ html body .app-container .scroll {
     left: 0;
     gap: 0px;
     background-color: #00c3dd;
-    height: 300px;
+    height: 400px;
     width: 100%;
   }
   .navbar-container .content .navbar .list.active .list__link {
@@ -266,7 +272,7 @@ html body .app-container .scroll {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 955px;
+  height: 100vh;
   background: rgba(0, 0, 0, 0) url(../images/slider-1.png) no-repeat fixed center center/cover;
   position: relative;
 }
@@ -344,18 +350,14 @@ html body .app-container .scroll {
   }
 }
 
-.gallery-container {
+.services-container {
   height: 100%;
-  background-color: #00c3dd;
   position: relative;
   padding-bottom: 50px;
-  -webkit-box-shadow: inset 0px -20px 10px -15px #323232, inset 0px 20px 10px -15px #323232;
-          box-shadow: inset 0px -20px 10px -15px #323232, inset 0px 20px 10px -15px #323232;
 }
 
-.gallery-container .section {
+.services-container .section {
   width: 100%;
-  padding-left: 400px;
   padding-top: 40px;
   padding-left: 0;
   display: -webkit-box;
@@ -366,37 +368,32 @@ html body .app-container .scroll {
           justify-content: center;
 }
 
-.gallery-container .section .scroll {
+.services-container .section .scroll {
   z-index: -1;
 }
 
-.gallery-container .section .gallery {
-  max-width: 1106px;
+.services-container .section .services {
+  max-width: 1100px;
 }
 
-.gallery-container .section .gallery .gallery__title {
-  text-align: center;
-  color: white;
+.services-container .section .services .services__title {
+  color: #323232;
   font-size: 40px;
   font-weight: 700;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   margin: 0;
   padding: 30px 0;
   text-transform: uppercase;
 }
 
-.gallery-container .section .gallery .gallery__title > span {
+.services-container .section .services .services__title > span {
   color: #00c3dd;
 }
 
-.gallery-container .section .gallery .gallery__title .gallery__title-color {
-  color: white;
+.services-container .section .services .services__title .services__title--color {
+  color: #00c3dd;
 }
 
-.gallery-container .section .gallery .list {
+.services-container .section .services .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,63 +404,60 @@ html body .app-container .scroll {
   padding-left: 0;
 }
 
-.gallery-container .section .gallery .list .list__item {
-  width: 355px;
-  height: 355px;
+.services-container .section .services .list .list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 250px;
+  height: 400px;
   cursor: pointer;
+  color: #565656;
 }
 
-.gallery-container .section .gallery .list .list__item:hover {
-  opacity: .9;
-}
-
-.gallery-container .section .gallery .list .list__item .list__image {
+.services-container .section .services .list .list__item .list__image {
   width: 100%;
   height: 100%;
+  max-height: 213px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 30px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1269px) {
-  .gallery-container {
-    height: 100%;
-  }
-  .gallery-container .carousel-root .carousel-slider {
-    width: 100% !important;
-    height: 600px !important;
-  }
-  .gallery-container .section {
-    width: 100%;
-    padding: 100px 20px;
-    padding-top: 20px;
+.services-container .section .services .list .list__item .list__title {
+  color: #00c3dd;
+  line-height: 2;
+  font-size: 20px;
+  margin: 0;
+}
+
+.services-container .section .services .list .list__item .list__description {
+  font-weight: 300;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1099px) {
+  .services-container .section .services {
+    padding: 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .gallery-container .section .gallery {
-    min-width: 100%;
+  .services-container .section .services .services__title {
+    text-align: center;
   }
-  .gallery-container .section .gallery .list {
-    gap: 10px;
-    padding-left: 0;
+  .services-container .section .services .list {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .gallery-container .section .gallery .list .list__item .list__image {
-    width: 100%;
-  }
-  .gallery-container .section .gallery .list .list__item .list__image:hover {
-    -webkit-transform: scale(1.01);
-            transform: scale(1.01);
   }
 }
 
 .about-us-container {
   width: 100%;
-  padding-left: 400px;
-  background-color: #242424;
-  height: 570px;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 0;
@@ -480,29 +474,39 @@ html body .app-container .scroll {
   width: 100%;
 }
 
-.about-us-container .section .about-us {
-  min-width: 1106px;
+.about-us-container .section .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 150px;
+  width: 100%;
+  max-width: 1100px;
 }
 
-.about-us-container .section .about-us .about-us__title {
-  text-align: center;
-  color: white;
+.about-us-container .section .wrapper .about-us {
+  width: 100%;
+  max-width: 450px;
+}
+
+.about-us-container .section .wrapper .about-us .about-us__title {
+  color: #323232;
   font-size: 40px;
   font-weight: 700;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   margin: 0;
   padding: 30px 0;
   text-transform: uppercase;
 }
 
-.about-us-container .section .about-us .about-us__title > span {
+.about-us-container .section .wrapper .about-us .about-us__title > span {
   color: #00c3dd;
 }
 
-.about-us-container .section .about-us .about-us-info {
+.about-us-container .section .wrapper .about-us .about-us-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,16 +517,22 @@ html body .app-container .scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0px;
+  max-width: 400px;
 }
 
-.about-us-container .section .about-us .about-us-info .about-us__text {
-  color: white;
+.about-us-container .section .wrapper .about-us .about-us-info .about-us__text--color {
   font-size: 20px;
-  width: 800px;
+  color: #323232;
 }
 
-.about-us-container .section .about-us .about-us-info .about-us__image {
+.about-us-container .section .wrapper .about-us .about-us-info .about-us__text {
+  color: #565656;
+  font-size: 20px;
+  width: 100%;
+  font-weight: 300;
+}
+
+.about-us-container .section .wrapper .about-us .about-us-info .about-us__image {
   width: 200px;
   height: 100%;
   -webkit-box-shadow: 0px 0px 20px 4px black;
@@ -530,33 +540,27 @@ html body .app-container .scroll {
   border-radius: 300px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1700px) {
+@media screen and (min-width: 320px) and (max-width: 1099px) {
   .about-us-container {
     padding: 20px;
-    padding-bottom: 80px;
     height: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    background-color: #333333;
-    background-image: none;
   }
-  .about-us-container .section .about-us {
-    min-width: 100%;
+  .about-us-container .section .wrapper {
+    gap: 0px;
   }
-  .about-us-container .section .about-us .about-us__title {
-    color: white;
-  }
-  .about-us-container .section .about-us .about-us-info {
+  .about-us-container .section .wrapper .about-us {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 40px;
-  }
-  .about-us-container .section .about-us .about-us-info .about-us__text {
-    font-size: 15px;
-    color: white;
-    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -570,7 +574,6 @@ html body .app-container .scroll {
 
 .plans-container .section {
   width: 100%;
-  padding-left: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -593,18 +596,14 @@ html body .app-container .scroll {
 }
 
 .plans-container .section .plans .plans__title {
-  text-align: center;
-  color: white;
+  color: #323232;
   font-size: 40px;
   font-weight: 700;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   margin: 0;
   padding: 30px 0;
   text-transform: uppercase;
   margin: 0;
+  color: white;
 }
 
 .plans-container .section .plans .plans__title > span {
@@ -718,6 +717,9 @@ html body .app-container .scroll {
   .plans-container .section .plans {
     width: 100%;
   }
+  .plans-container .section .plans .plans__title {
+    text-align: center;
+  }
   .plans-container .section .plans .list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -743,15 +745,12 @@ html body .app-container .scroll {
 }
 
 .contact-container {
-  width: 100%;
-  padding-left: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 400px;
   background-color: #242424;
@@ -762,7 +761,8 @@ html body .app-container .scroll {
 }
 
 .contact-container .section {
-  width: 1120px;
+  width: 100%;
+  max-width: 1100px;
   padding-top: 20px;
 }
 
@@ -773,18 +773,14 @@ html body .app-container .scroll {
 }
 
 .contact-container .section .contact__title {
-  text-align: center;
-  color: white;
+  color: #323232;
   font-size: 40px;
   font-weight: 700;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   margin: 0;
   padding: 30px 0;
   text-transform: uppercase;
   margin: 0;
+  color: white;
 }
 
 .contact-container .section .contact__title > span {
@@ -1017,11 +1013,8 @@ html body .app-container .scroll {
 
 .carousel-container {
   width: 100%;
+  max-width: 500px;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
 }
 
 .carousel-container .carousel-section {
@@ -1035,14 +1028,14 @@ html body .app-container .scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 120px;
+  gap: 100px;
 }
 
 .carousel-container .carousel-section .carousel {
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  height: 600px;
+  max-width: 500px;
+  height: 400px;
 }
 
 .carousel-container .carousel-section .carousel .carousel__item {
@@ -1061,7 +1054,6 @@ html body .app-container .scroll {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
 }
 
 .carousel-container .carousel-section .carousel .buttons {
@@ -1107,91 +1099,29 @@ html body .app-container .scroll {
   color: #00c3dd;
 }
 
-.carousel-container .carousel-section .carousel .buttons .close-button {
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-radius: 300px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.carousel-container .carousel-section .carousel .buttons .close-button:hover {
-  color: #00c3dd;
-}
-
-.carousel-container .carousel-section .gallery-row {
+.carousel-container .carousel-section .wrapper {
   width: 100%;
+  max-width: 500px;
+  padding: 0;
   position: relative;
-}
-
-.carousel-container .carousel-section .gallery-row .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
-  padding-left: 20px;
-  margin: 0;
-  list-style: none;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  position: relative;
-  z-index: 5;
-  padding-right: 20px;
-}
-
-.carousel-container .carousel-section .gallery-row .list .list__item {
-  width: 220px;
-  height: 220px;
-  cursor: pointer;
-  border-radius: 10px;
-  border: 3px solid rgba(0, 0, 0, 0);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.carousel-container .carousel-section .gallery-row .list .list__item.active {
-  border: 3px solid #00c3dd;
-}
-
-.carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  -webkit-transition: opacity .25s ease;
-  transition: opacity .25s ease;
-}
-
-.carousel-container .carousel-section .gallery-row .list .list__item .list__thumbnail:hover {
-  opacity: .8;
-}
-
-.carousel-container .carousel-section .gallery-row .gallery-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.carousel-container .carousel-section .gallery-row .gallery-buttons .button {
+.carousel-container .carousel-section .wrapper .button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1204,19 +1134,71 @@ html body .app-container .scroll {
   background-color: #00c3dd;
   color: rgba(255, 255, 255, 0.876);
   font-size: 40px;
-  border: 3px solid #00c3dd;
+  border: none;
   width: 50px;
   height: 50px;
-  border-radius: 30px;
   cursor: pointer;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
   position: relative;
-  z-index: 5;
+  z-index: 3;
 }
 
-.carousel-container .carousel-section .gallery-row .gallery-buttons .button:hover {
-  background-color: rgba(0, 0, 0, 0);
+.carousel-container .carousel-section .wrapper .button:hover {
+  background-color: #323232;
+  color: #00c3dd;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-left: 15px;
+  margin: 0;
+  list-style: none;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row .list .list__item {
+  width: 180px;
+  height: 100px;
+  cursor: pointer;
+  border: 3px solid rgba(0, 0, 0, 0);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row .list .list__item.active {
+  border: 3px solid #00c3dd;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row .list .list__item .list__thumbnail {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity .25s ease;
+  transition: opacity .25s ease;
+}
+
+.carousel-container .carousel-section .wrapper .gallery-row .list .list__item .list__thumbnail:hover {
+  opacity: .8;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1700px) {
@@ -1253,6 +1235,149 @@ html body .app-container .scroll {
     width: 30px;
     height: 30px;
     font-size: 18px;
+  }
+}
+
+.calendar-container {
+  width: 100%;
+  background: black url(../images/calendaryImage.png) no-repeat fixed center center/cover;
+}
+
+.calendar-container .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
+  position: relative;
+}
+
+.calendar-container .section .scroll {
+  left: 0;
+  top: 00px;
+  z-index: -1;
+}
+
+.calendar-container .section .calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #323232;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.calendar-container .section .calendar .calendar__title {
+  color: #323232;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  padding: 30px 0;
+  text-transform: uppercase;
+  color: #00c3dd;
+}
+
+.calendar-container .section .calendar .calendar__title > span {
+  color: #00c3dd;
+}
+
+.calendar-container .section .calendar .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.calendar-container .section .calendar .days .days__item {
+  min-width: 100px;
+  max-width: 183.33px;
+  width: 100%;
+}
+
+.calendar-container .section .calendar .days .days__item .days__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #00c3dd;
+  margin: 0;
+  height: 50px;
+}
+
+.calendar-container .section .calendar .days .days__item .activities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #323232;
+}
+
+.calendar-container .section .calendar .days .days__item .activities .activity__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+}
+
+.calendar-container .section .calendar .days .days__item .activities .activity__item .activity__name {
+  color: #00c3dd;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1099px) {
+  .calendar-container .section .calendar {
+    padding: 20px;
+  }
+  .calendar-container .section .calendar .calendar__title {
+    text-align: center;
+  }
+  .calendar-container .section .calendar .days {
+    row-gap: 20px;
+  }
+  .calendar-container .section .calendar .days .days__item {
+    border: 1px solid black;
   }
 }
 /*# sourceMappingURL=index.css.map */

@@ -21,25 +21,24 @@ export default function Carousel({images, selectedImage}) {
                     <div className="buttons">
                         <button className="button" onClick={() => moveCarouselImage(-1)}><i className="fas fa-angle-left"></i></button>
                         <button className="button" onClick={() => moveCarouselImage(1)}><i className="fas fa-angle-right"></i></button>
-                        <button className="close-button" id="close-button"><i className="fas fa-times"></i></button>
                     </div>
                 </div>
-                <div className="gallery-row">
-                    <ul className="list" id="galleryList">
-                        {
-                            images.map((image, id) => {
-                                return (
-                                    <div className={activeImage === id ? "list__item active" : "list__item"} key={id}>
-                                        <img className="list__thumbnail" src={image.url} onClick={() => selectCarouselImage(id)} alt="galleryImage" />    
-                                    </div>
-                                )
-                            })
-                        }
-                    </ul>
-                    <div className="gallery-buttons">
-                        <button className="button" onClick={() => moveToPositionAndDirection()}><i className="fas fa-angle-left"></i></button>
-                        <button className="button" onClick={() => moveToPositionAndDirection("right")}><i className="fas fa-angle-right"></i></button>
+                <div className="wrapper">
+                    <button className="button" onClick={() => moveToPositionAndDirection()}><i className="fas fa-angle-left"></i></button>
+                    <div className="gallery-row" id="galleryRow">
+                        <ul className="list" id="galleryList">
+                            {
+                                images.map((image, id) => {
+                                    return (
+                                        <div className={activeImage === id ? "list__item active" : "list__item"} key={id}>
+                                            <img className="list__thumbnail" src={image.url} onClick={() => selectCarouselImage(id)} alt="galleryImage" />    
+                                        </div>
+                                    )
+                                })
+                            }
+                        </ul>
                     </div>
+                    <button className="button" onClick={() => moveToPositionAndDirection("right")}><i className="fas fa-angle-right"></i></button>
                 </div>
             </section>
         </div>

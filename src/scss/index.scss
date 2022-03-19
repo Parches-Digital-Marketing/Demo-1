@@ -1,12 +1,17 @@
 $primaryColor: #00c3dd;
+$secundaryColor: #00B08D;
+$tertiaryColor: #16715F;
+$whiteColor: white;
+$blackColor: #323232;
+$textColor: #565656;
 $opacityPrimaryColor: #00e1ff;
+$maxSectionWidth: 1100px;
+$fontFamily: "Roboto";
 
 @mixin sectionTitle {
-    text-align: center;
-    color: white;
+    color: $blackColor;
     font-size: 40px;
     font-weight: 700;
-    user-select: none;
     margin: 0;
     padding: 30px 0;
     text-transform: uppercase;
@@ -15,18 +20,26 @@ $opacityPrimaryColor: #00e1ff;
     }
 }
 
-@mixin section {
-    width: 100%;
-    padding-left: 400px;
-}
-
 @font-face {
-    src: url("./fonts/Roboto-Bold.ttf") format("truetype"),
-         url("./fonts/Roboto-Medium.ttf") format("truetype"),
-         url("./fonts/Roboto-Regular.ttf") format("truetype"); 
-    font-family: "Roboto";
+    src: url("../fonts/Roboto-Light.ttf") format("truetype");
+    font-family: $fontFamily;
+    font-weight: 300;
 }
-
+@font-face {
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+    font-family: $fontFamily;
+    font-weight: 400;
+}
+@font-face {
+    src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+    font-family: $fontFamily;
+    font-weight: 500;
+}
+@font-face {
+    font-family: $fontFamily;
+    src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
 
 html {
     box-sizing: border-box;
@@ -39,7 +52,7 @@ html {
         overflow-x: hidden;
         height: 100vh;
         width: 100%;
-        font-family: 'Roboto';
+        font-family: $fontFamily;
         font-size: 14px;
         font-weight: 400;
         color: white;
@@ -53,21 +66,6 @@ html {
             min-height: 100%;
             height: min-content;
             position: relative;
-            .dark {
-                display: none;
-                background: #000;
-                opacity: 0.8;
-                z-index: 5;
-                content: ' ';
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                &.active {
-                    display: inline-block;
-                }
-            }
             .scroll-top {
                 width: 50px;
                 height: 50px;
@@ -91,6 +89,11 @@ html {
                 position: absolute;
                 top: 0;
             }
+            .body {
+                .complementary-sections {
+                    background-color: $whiteColor;
+                }
+            }
         }
     }
 }
@@ -98,7 +101,7 @@ html {
 //sections
 @import "./sections/navbar";
 @import "./sections/home";
-@import "./sections/gallery";
+@import "./sections/services";
 @import "./sections/aboutUs";
 @import "./sections/plans";
 @import "./sections/contact";
@@ -106,3 +109,4 @@ html {
 
 //components
 @import "./components/carousel";
+@import "./components/calendar"

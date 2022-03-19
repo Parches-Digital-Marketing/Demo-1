@@ -1,7 +1,7 @@
 export default function Plans() {
     return (
         <div className="plans-container">
-            <div className="section">
+            <section className="section">
                 <div className="scroll" name="plans"></div>
                 <div className="plans">
                     <h2 className="plans__title">Nuestros <span className="about-us__title-color">Planes</span></h2>
@@ -35,7 +35,7 @@ export default function Plans() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
