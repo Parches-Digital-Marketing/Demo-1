@@ -273,7 +273,7 @@ html body .app-container .body .complementary-sections {
           align-items: center;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0) url(../images/slider-1.png) no-repeat fixed center center/cover;
+  background: rgba(0, 0, 0, 0) url(../images/slider-1.jpg) no-repeat fixed center center/cover;
   position: relative;
 }
 
@@ -417,7 +417,6 @@ html body .app-container .body .complementary-sections {
           align-items: flex-start;
   width: 250px;
   height: 400px;
-  cursor: pointer;
   color: #565656;
 }
 
@@ -731,7 +730,7 @@ html body .app-container .body .complementary-sections {
         flex-wrap: wrap;
   }
   .plans-container .section .plans .list .list__item {
-    width: 100%;
+    width: 80%;
     max-width: 355px;
   }
   .plans-container .section .plans .list .list__item .list__title {
@@ -791,7 +790,12 @@ html body .app-container .body .complementary-sections {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 20px;
 }
 
 .contact-container .section .contact-info .subtitle {
@@ -860,7 +864,6 @@ html body .app-container .body .complementary-sections {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
 }
 
 .contact-container .section .contact-info .contact {
@@ -871,10 +874,10 @@ html body .app-container .body .complementary-sections {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
 }
 
 .contact-container .section .contact-info .map {
+  width: 100%;
   border: 0;
   -webkit-box-shadow: 0 0 10px .1px black;
           box-shadow: 0 0 10px .1px black;
@@ -884,105 +887,20 @@ html body .app-container .body .complementary-sections {
 
 @media screen and (min-width: 320px) and (max-width: 1700px) {
   .contact-container {
-    padding-left: 0;
     height: 100%;
   }
   .contact-container .section {
-    width: 100%;
     padding: 20px;
-    padding-bottom: 80px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    height: 100%;
   }
-  .contact-container .section .contact-info-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  .contact-container .section .contact__title {
+    text-align: center;
   }
-  .contact-container .section .contact-info-container .contact-info {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 70% 30%;
-        grid-template-columns: 70% 30%;
-    grid-auto-rows: 100%;
-    gap: 0;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media {
-    width: 100%;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media .list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link {
-    width: 100%;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link .list__item {
-    width: 100%;
-    gap: 10px;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media .list .list__link .list__item .list__image {
-    width: 30px;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 700px) {
-  .contact-container .section .contact-info .map-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1/3;
-  }
-  .contact-container .section .contact-info .map-container .map {
-    width: 100%;
-    height: 200px;
-    margin: 0;
-    margin-top: 40px;
-    max-width: 363px;
-  }
-}
-
-@media screen and (min-width: 701px) and (max-width: 1700px) {
-  .contact-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .contact-container .section .contact-info-container .contact-info {
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    gap: 0px;
-    max-width: 700px;
-    min-width: 600px;
-  }
-  .contact-container .section .contact-info-container .contact-info .social-media {
-    width: auto;
-  }
-  .contact-container .section .contact-info-container .contact-info .map {
-    width: 100%;
-    height: 200px;
-    margin: 0;
-    margin-top: 20px;
-    max-width: 363px;
+  .contact-container .section .contact-info {
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
   }
 }
 
@@ -1028,7 +946,9 @@ html body .app-container .body .complementary-sections {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 100px;
+  row-gap: 70px;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
 }
 
 .carousel-container .carousel-section .carousel {
@@ -1307,9 +1227,9 @@ html body .app-container .body .complementary-sections {
 }
 
 .calendar-container .section .calendar .days .days__item {
-  min-width: 100px;
+  min-width: 50px;
   max-width: 183.33px;
-  width: 100%;
+  width: 40%;
 }
 
 .calendar-container .section .calendar .days .days__item .days__title {
@@ -1374,6 +1294,8 @@ html body .app-container .body .complementary-sections {
     text-align: center;
   }
   .calendar-container .section .calendar .days {
+    -webkit-column-gap: 5px;
+            column-gap: 5px;
     row-gap: 20px;
   }
   .calendar-container .section .calendar .days .days__item {

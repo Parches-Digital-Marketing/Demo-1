@@ -32,9 +32,9 @@
                 width: 100%;
                 max-width: $maxSectionWidth;
                 .days__item {
-                    min-width: 100px;
+                    min-width: 50px;
                     max-width: 183.33px;
-                    width: 100%;
+                    width: 40%;
                     .days__title {
                         display: flex;
                         justify-content: center;
@@ -80,6 +80,7 @@
                     text-align: center;
                 }
                 .days {
+                    column-gap: 5px;
                     row-gap: 20px;
                     .days__item {
                         border: 1px solid black;

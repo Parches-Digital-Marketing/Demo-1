@@ -6,7 +6,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 100px;
+        row-gap: 70px;
+        column-gap: 100px;
         .carousel {
             position: relative;
             width: 100%;

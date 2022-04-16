@@ -23,7 +23,9 @@
         }
         .contact-info {
             display: flex;
-            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 20px;
             .subtitle {
                 color: $primaryColor;
             }
@@ -63,14 +65,13 @@
             .opening-hours {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
             }
             .contact {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
             }
             .map {
+                width: 100%;
                 border:0;
                 box-shadow: 0 0 10px .1px black;
                 border-radius: 10px;
@@ -82,89 +83,16 @@
 
 @media screen and (min-width: 320px) and (max-width: 1700px) {
     .contact-container {
-        padding-left: 0;
         height: 100%;
         .section {
-            width: 100%;
             padding: 20px;
-            padding-bottom: 80px;
             box-sizing: border-box;
-            .contact-info-container {
-                display: flex;
-                justify-content: center;
-                .contact-info {
-                    display: grid;
-                    grid-template-columns: 70% 30%;
-                    grid-auto-rows: 100%;
-                    gap: 0;
-                    .social-media {
-                        width: 100%;
-                        .list {
-                            flex-direction: column;
-                            width: 100%;
-                            .list__link {
-                                width: 100%;
-                                .list__item {
-                                    width: 100%;
-                                    gap: 10px;
-                                    .list__image {
-                                        width: 30px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            height: 100%;
+            .contact__title {
+                text-align: center;
             }
-        }
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width:700px) {
-    .contact-container {
-        .section {
             .contact-info {
-                .map-container {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                    grid-column: 1/3;
-                    .map {
-                        width: 100%;
-                        height: 200px;
-                        margin: 0;
-                        margin-top: 40px;
-                        max-width: 363px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 701px) and (max-width: 1700px) {
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .section {
-            .contact-info-container {
-                .contact-info {
-                    grid-template-columns: 50% 50%;
-                    gap: 0px;
-                    max-width: 700px;
-                    min-width: 600px;
-                    .social-media {
-                        width: auto;
-                    }
-                    .map {
-                        width: 100%;
-                        height: 200px;
-                        margin: 0;
-                        margin-top: 20px;
-                        max-width: 363px;
-                    }
-                }
+                column-gap: 20px;
             }
         }
     }
