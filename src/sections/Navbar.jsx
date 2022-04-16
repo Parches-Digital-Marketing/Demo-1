@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from 'react-scroll'
-import larosalogo from '../images/larosalogo.png'
+import logo from '../images/logo.png'
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false)
@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className={navbar ? "navbar-container active" : "navbar-container"}>
             <div className="content">
                 <div className="logo-container">
-                    <img className="navbar__logo" src={larosalogo} alt="logo" />
+                    <img className="navbar__logo" src={logo} alt="logo" />
                 </div>
                 <nav className="navbar">
                     <ul className={burgerMenu ? "list active" : "list"}>

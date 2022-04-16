@@ -946,7 +946,7 @@ html body .app-container .body .complementary-sections {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 70px;
+  row-gap: 10px;
   -webkit-column-gap: 100px;
           column-gap: 100px;
 }
